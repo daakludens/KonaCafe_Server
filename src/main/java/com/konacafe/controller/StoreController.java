@@ -6,10 +6,13 @@ import com.konacafe.model.StoreSaveRequest;
 import com.konacafe.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -38,5 +41,15 @@ public class StoreController {
     @GetMapping
     public StorePageResponse getStoreLists(Pageable pageable) {
         return storeService.findAllByStoreName(pageable);
+    }
+
+    @PutMapping
+    public void updateStoreInfo(@RequestBody StoreSaveRequest storeSaveRequest) {
+        storeService.updateStoreInfo(storeSaveRequest);
+    }
+
+    @DeleteMapping
+    public void deleteStore(@RequestParam Long id) {
+        storeService.deleteStore(id);
     }
 }

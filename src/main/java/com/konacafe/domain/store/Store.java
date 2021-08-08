@@ -2,6 +2,7 @@ package com.konacafe.domain.store;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import com.konacafe.model.StoreSaveRequest;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,10 +29,23 @@ public class Store {
 
     private String storeTelephone;
 
+    @Column(name = "is_deleted")
+    private Boolean deleted = false;
+
     @Builder
     public Store(String storeName, String storeAddress, String storeTelephone) {
         this.storeName = storeName;
         this.storeAddress = storeAddress;
         this.storeTelephone = storeTelephone;
+    }
+
+    public void updateStore(StoreSaveRequest storeSaveRequest) {
+        this.storeName = storeSaveRequest.getStoreName();
+        this.storeAddress = storeSaveRequest.getStoreAddress();
+        this.storeTelephone = storeSaveRequest.getStoreTelephone();
+    }
+
+    public void deleteStore() {
+        this.deleted = true;
     }
 }

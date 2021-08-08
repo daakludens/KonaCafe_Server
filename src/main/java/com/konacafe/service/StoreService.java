@@ -5,6 +5,7 @@ import com.konacafe.domain.store.StoreRepository;
 import com.konacafe.exception.StoreDuplicatedException;
 import com.konacafe.model.StorePageResponse;
 import com.konacafe.model.StoreResponse;
+import com.konacafe.model.StoreSaveRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,5 +48,19 @@ public class StoreService {
                     .totalPage(stores.getTotalPages())
                     .currentPage(pageable.getPageNumber())
                     .storeList(storeList).build();
+    }
+
+    @Transactional
+    public void updateStoreInfo(StoreSaveRequest storeSaveRequest) {
+//        로그인 권한 체크 후 업데이트 처리 할 예정
+//
+//        store.updateStore(storeSaveRequest);
+    }
+
+    public void deleteStore(Long id) {
+        //로그인 권한 체크 후 삭제처리가 가능하도록 할 예정
+
+        Store store = storeRepository.findStoreById(id);
+        store.deleteStore();
     }
 }
