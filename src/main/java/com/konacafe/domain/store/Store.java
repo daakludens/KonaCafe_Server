@@ -23,10 +23,13 @@ public class Store {
     @Column(name = "store_id")
     private Long id;
 
+    @Column(nullable = false)
     private String storeName;
 
+    @Column(nullable = false)
     private String storeAddress;
 
+    @Column(nullable = false)
     private String storeTelephone;
 
     @Column(name = "is_deleted")
