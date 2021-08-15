@@ -17,17 +17,18 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "menu_id")
     private Long id;
 
-    private String name;
+    @Column(nullable = false)
+    private String menuName;
 
     @Builder
-    public Menu(String name) {
-        this.name = name;
+    public Menu(String menuName) {
+        this.menuName = menuName;
     }
 
-    public void update(String name) {
-        this.name = name;
+    public void update(String menuName) {
+        this.menuName = menuName;
     }
 }

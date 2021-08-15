@@ -1,6 +1,6 @@
 package com.konacafe.controller;
 
-import com.konacafe.dto.MenuSaveRequestDto;
+import com.konacafe.model.MenuSaveRequest;
 import com.konacafe.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,19 +13,19 @@ public class MenuController {
     private final MenuService menuService;
 
     @PostMapping
-    public void save(@RequestBody MenuSaveRequestDto requestDto) {
+    public void save(@RequestBody MenuSaveRequest menuSaveRequest) {
 
-        menuService.save(requestDto);
+        menuService.save(menuSaveRequest);
     }
 
-    @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody MenuSaveRequestDto requestDto) {
+    @PutMapping
+    public void update(@RequestBody MenuSaveRequest menuSaveRequest) {
 
-        menuService.update(id, requestDto);
+        menuService.update(menuSaveRequest);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    @DeleteMapping
+    public void delete(@RequestParam Long id) {
 
         menuService.delete(id);
     }
