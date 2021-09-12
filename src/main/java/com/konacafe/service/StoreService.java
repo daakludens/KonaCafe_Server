@@ -26,7 +26,7 @@ public class StoreService {
         boolean isDuplicatedPhone = isDuplicatedTelephone(storeInfo.getStoreTelephone());
 
         if(isDuplicatedPhone) {
-            throw new StoreDuplicatedException("이미 등록 된 가게입니다.");
+            throw new StoreDuplicatedException("이미 등록되어 있는 가게입니다.");
         }
 
         storeRepository.save(storeInfo);
