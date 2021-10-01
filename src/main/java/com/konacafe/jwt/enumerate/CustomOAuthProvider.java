@@ -16,7 +16,7 @@ public enum CustomOAuthProvider {
                     .clientId("81fe449e1af05cfd1efc023f30a55b9e")
                     .clientSecret("V1yziooG7B4A9PFciFxFOMoNFoRJ2SG3")
                     .userNameAttributeName("id") // userInfo API Response에서 얻어올 ID 프로퍼티
-                    .clientName("Kakao"); // spring 내에서 인식할 OAuth2 Provider Name
+                    .clientName("konacafe"); // spring 내에서 인식할 OAuth2 Provider Name
         }
     };
 
