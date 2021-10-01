@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+
+  config:
+    import:
+      - optional:classpath:application-dev.yml
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    database: mysql
+---
+spring:
+  profiles:
+    include: kakao
+
+
+
