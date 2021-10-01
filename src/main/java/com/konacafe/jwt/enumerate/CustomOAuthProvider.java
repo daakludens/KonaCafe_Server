@@ -13,8 +13,8 @@ public enum CustomOAuthProvider {
                     .authorizationUri("https://kauth.kakao.com/oauth/authorize") // authorization code 얻는 API
                     .tokenUri("https://kauth.kakao.com/oauth/token") // access Token 얻는 API
                     .userInfoUri("https://kapi.kakao.com/v2/user/me") // 유저 정보 조회 API
-                    .clientId("[client id 입력]")
-                    .clientSecret("[secret key 입력]")
+                    .clientId("81fe449e1af05cfd1efc023f30a55b9e")
+                    .clientSecret("V1yziooG7B4A9PFciFxFOMoNFoRJ2SG3")
                     .userNameAttributeName("id") // userInfo API Response에서 얻어올 ID 프로퍼티
                     .clientName("Kakao"); // spring 내에서 인식할 OAuth2 Provider Name
         }
